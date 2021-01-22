@@ -191,7 +191,8 @@ body {
 	}
 }
 
-/* Make item sizes slightly wider on smaller devices */
+/* Make item sizes slightly wider on smaller devices
+Vals need to be larger for larger scale. */
 @media only screen and (max-width: 800px) {
 	.gallery-item {
 		height: calc(40vw/2);
