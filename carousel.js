@@ -15,12 +15,6 @@ class Carousel {
     this.carouselArray[3].classList.add('gallery-item-next');
     this.carouselArray[4].classList.add('gallery-item-last');
 
-    if (window.mobileAndTabletCheck()) {
-      this.carouselArray.forEach(e => {
-        e.classList.add('no-transition');
-      });
-    }
-
     document.querySelector('.gallery-nav').childNodes[0].className = 'gallery-nav-item gallery-item-first';
     document.querySelector('.gallery-nav').childNodes[1].className = 'gallery-nav-item gallery-item-previous';
     document.querySelector('.gallery-nav').childNodes[2].className = 'gallery-nav-item gallery-item-selected';

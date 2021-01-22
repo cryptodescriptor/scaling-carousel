@@ -34,10 +34,6 @@ body {
   z-index: 0;
 }
 
-.no-transition {
-  transition: none;
-}
-
 .gallery-item:nth-child(1) {
 	background: grey;
 }
