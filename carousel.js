@@ -105,6 +105,19 @@ class Carousel {
   }
 }
 
+var elems = [...galleryItems];
+var rect;
+
+window.addEventListener('resize', function() {
+  elems.forEach(e => {
+    rect = e.getBoundingClientRect();
+
+    if (Math.round(rect.width) !== Math.round(rect.height*2)) {
+      console.log('w: ' + Math.round(rect.width) + ', sum: ' + Math.round(rect.height*2));
+    }
+  });
+});
+
 const exampleCarousel = new Carousel(galleryContainer, galleryItems);
 
 exampleCarousel.setNav();
