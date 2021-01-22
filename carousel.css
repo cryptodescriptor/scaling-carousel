@@ -27,11 +27,15 @@ body {
   height: calc(30vw/2);
   opacity: .4;
   position: absolute;
-  transition: left 0.3s;
+  transition: all 0.3s ease-in-out;
   width: 30vw;
   max-height: 40%;
   max-width: calc(40vh*2);
   z-index: 0;
+}
+
+.mobile-transition {
+  transition: left 0.3s ease-in-out;
 }
 
 .gallery-item:nth-child(1) {
