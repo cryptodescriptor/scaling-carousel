@@ -15,7 +15,7 @@ class Carousel {
     this.carouselArray[3].classList.add('gallery-item-next');
     this.carouselArray[4].classList.add('gallery-item-last');
 
-    if (window.mobileAndTabletCheck()) {
+    if (!window.mobileAndTabletCheck()) {
       this.carouselArray.forEach(e => {
         e.classList.add('no-transition');
       });

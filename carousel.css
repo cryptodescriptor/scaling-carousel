@@ -34,8 +34,8 @@ body {
   z-index: 0;
 }
 
-.mobile-transition {
-	transition: none;
+.no-transition {
+  transition: none;
 }
 
 .gallery-item:nth-child(1) {
