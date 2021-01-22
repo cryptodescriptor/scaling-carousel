@@ -17,7 +17,7 @@ class Carousel {
 
     if (window.mobileAndTabletCheck()) {
       this.carouselArray.forEach(e => {
-        e.classList.add('mobile-transition');
+        e.classList.add('no-transition');
       });
     }
 
