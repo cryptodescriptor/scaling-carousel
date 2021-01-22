@@ -27,7 +27,7 @@ body {
   height: calc(30vw/2);
   opacity: .4;
   position: absolute;
-  transition: all 0.3s ease-in-out, width .3s, height .3s, max-width .3s, max-height .3s;
+  transition: left 0.3s;
   width: 30vw;
   max-height: 40%;
   max-width: calc(40vh*2);
