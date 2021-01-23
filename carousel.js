@@ -6,8 +6,7 @@ const galleryContainer = document.querySelector('.gallery-container');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 class Carousel {
-  constructor(container, items) {
-    this.carouselContainer = container;
+  constructor(items) {
     this.carouselArray = [...items];
     this.carouselArrayTemp = [];
   }
@@ -43,7 +42,7 @@ class Carousel {
       tempClassList.push(item.classList[1]);
     });
 
-    [galleryItems, galleryNavItems].forEach(elements => {
+    [this.carouselArray, galleryNavItems].forEach(elements => {
       elements.forEach((item, ind) => {
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
@@ -75,7 +74,7 @@ class Carousel {
   }
 }
 
-const exampleCarousel = new Carousel(galleryContainer, galleryItems);
+const exampleCarousel = new Carousel(galleryItems);
 
 exampleCarousel.setNav();
 const galleryNavItems = exampleCarousel.setInitialState();
