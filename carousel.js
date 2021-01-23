@@ -28,7 +28,7 @@ class Carousel {
     selected.forEach(el => {
       el.classList.remove('gallery-item-selected');
 
-      if (target.className == 'gallery-controls-previous') {
+      if (target.className == 'previous') {
         el.classList.add('gallery-item-next');
       } else {
         el.classList.add('gallery-item-previous');
@@ -38,7 +38,7 @@ class Carousel {
     previous.forEach(el => {
       el.classList.remove('gallery-item-previous');
 
-      if (target.className == 'gallery-controls-previous') {
+      if (target.className == 'previous') {
         el.classList.add('gallery-item-selected');
       } else {
         el.classList.add('gallery-item-first');
@@ -48,7 +48,7 @@ class Carousel {
     next.forEach(el => {
       el.classList.remove('gallery-item-next');
 
-      if (target.className == 'gallery-controls-previous') {
+      if (target.className == 'previous') {
         el.classList.add('gallery-item-last');
       } else {
         el.classList.add('gallery-item-selected');
@@ -58,7 +58,7 @@ class Carousel {
     first.forEach(el => {
       el.classList.remove('gallery-item-first');
 
-      if (target.className == 'gallery-controls-previous') {
+      if (target.className == 'previous') {
         el.classList.add('gallery-item-previous');
       } else {
         el.classList.add('gallery-item-last');
@@ -68,7 +68,7 @@ class Carousel {
     last.forEach(el => {
       el.classList.remove('gallery-item-last');
 
-      if (target.className == 'gallery-controls-previous') {
+      if (target.className == 'previous') {
         el.classList.add('gallery-item-first');
       } else {
         el.classList.add('gallery-item-next');
