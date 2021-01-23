@@ -43,7 +43,10 @@ body {
 }
 
 .gallery-item:nth-child(3) {
-	background: url('./images/product-landing-page.png') center center/cover no-repeat fixed;
+	background-image: url('./images/product-landing-page.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .gallery-item:nth-child(4) {
