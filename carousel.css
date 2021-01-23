@@ -199,18 +199,18 @@ body {
 Vals need to be larger for larger scale. */
 @media only screen and (max-width: 800px) {
 	.gallery-item {
-		height: calc(50vw/2);
+		height: calc(60vw/2);
 		width: 50vw;
 	}
 
 	.gallery-item.gallery-item-selected {
-		height: calc(80vw/2);
+		height: calc(90vw/2);
 		width: 80vw;
 	}
 
 	.gallery-item.gallery-item-previous,
 	.gallery-item.gallery-item-next {
-		height: calc(65vw/2);
+		height: calc(75vw/2);
 		width: 65vw;
 	}
 }
