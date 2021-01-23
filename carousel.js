@@ -1,3 +1,7 @@
+Array.prototype.rotate = function(n) {
+  return this.slice(n, this.length).concat(this.slice(0, n));
+}
+
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -5,6 +9,7 @@ class Carousel {
   constructor(container, items) {
     this.carouselContainer = container;
     this.carouselArray = [...items];
+    this.carouselArrayTemp = [];
   }
 
   // Assign initial css classes for gallery and nav items
@@ -20,59 +25,29 @@ class Carousel {
     document.querySelector('.gallery-nav').childNodes[2].className = 'gallery-nav-item gallery-item-selected';
     document.querySelector('.gallery-nav').childNodes[3].className = 'gallery-nav-item gallery-item-next';
     document.querySelector('.gallery-nav').childNodes[4].className = 'gallery-nav-item gallery-item-last';
+
+    return document.querySelectorAll('.gallery-nav-item');
   }
 
   // Update the order state of the carousel with css classes
-  setCurrentState(target, selected, previous, next, first, last) {
+  setCurrentState(target) {
+    if (target.className === 'next') {
+      this.carouselArrayTemp = this.carouselArray.rotate(-1);
+    } else if (target.className === 'previous') {
+      this.carouselArrayTemp = this.carouselArray.rotate(1);
+    }
 
-    selected.forEach(el => {
-      el.classList.remove('gallery-item-selected');
+    let tempClassList = [];
 
-      if (target.className == 'previous') {
-        el.classList.add('gallery-item-next');
-      } else {
-        el.classList.add('gallery-item-previous');
-      }
+    this.carouselArrayTemp.forEach(item => {
+      tempClassList.push(item.classList[1]);
     });
 
-    previous.forEach(el => {
-      el.classList.remove('gallery-item-previous');
-
-      if (target.className == 'previous') {
-        el.classList.add('gallery-item-selected');
-      } else {
-        el.classList.add('gallery-item-first');
-      }
-    });
-
-    next.forEach(el => {
-      el.classList.remove('gallery-item-next');
-
-      if (target.className == 'previous') {
-        el.classList.add('gallery-item-last');
-      } else {
-        el.classList.add('gallery-item-selected');
-      }
-    });
-
-    first.forEach(el => {
-      el.classList.remove('gallery-item-first');
-
-      if (target.className == 'previous') {
-        el.classList.add('gallery-item-previous');
-      } else {
-        el.classList.add('gallery-item-last');
-      }
-    });
-
-    last.forEach(el => {
-      el.classList.remove('gallery-item-last');
-
-      if (target.className == 'previous') {
-        el.classList.add('gallery-item-first');
-      } else {
-        el.classList.add('gallery-item-next');
-      }
+    [galleryItems, galleryNavItems].forEach(elements => {
+      elements.forEach((item, ind) => {
+        item.classList.remove(item.classList[1]);
+        item.classList.add(tempClassList[ind]);
+      });
     });
   }
 
@@ -83,23 +58,18 @@ class Carousel {
     this.carouselArray.forEach(item => {
       const nav = galleryContainer.lastElementChild;
       nav.appendChild(document.createElement('li'));
-    }); 
+    });
   }
  
   // Add a click event listener to trigger setCurrentState method to rearrange carousel
   useControls() {
-    const triggers = [document.querySelector('.previous'), document.querySelector('.next')];
+    const triggers = [document.querySelector('.previous'),
+    document.querySelector('.next')];
 
     triggers.forEach(control => {
       control.addEventListener('click', () => {
         const target = control;
-        const selectedItem = document.querySelectorAll('.gallery-item-selected');
-        const previousSelectedItem = document.querySelectorAll('.gallery-item-previous');
-        const nextSelectedItem = document.querySelectorAll('.gallery-item-next');
-        const firstCarouselItem = document.querySelectorAll('.gallery-item-first');
-        const lastCarouselItem = document.querySelectorAll('.gallery-item-last');
-
-        this.setCurrentState(target, selectedItem, previousSelectedItem, nextSelectedItem, firstCarouselItem, lastCarouselItem);
+        this.setCurrentState(target);
       });
     });
   }
@@ -108,5 +78,5 @@ class Carousel {
 const exampleCarousel = new Carousel(galleryContainer, galleryItems);
 
 exampleCarousel.setNav();
-exampleCarousel.setInitialState();
+const galleryNavItems = exampleCarousel.setInitialState();
 exampleCarousel.useControls();
