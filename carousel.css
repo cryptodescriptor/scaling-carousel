@@ -35,10 +35,11 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: lightgrey;
 }
 
 .gallery-item:nth-child(1) {
-	background: grey;
+	
 }
 
 .gallery-item:nth-child(2) {
@@ -54,7 +55,7 @@ body {
 }
 
 .gallery-item:nth-child(5) {
-	background: green;
+	
 }
 
 .gallery-item.gallery-item-selected {
