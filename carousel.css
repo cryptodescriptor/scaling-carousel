@@ -39,7 +39,7 @@ body {
 }
 
 .gallery-item:nth-child(1) {
-	
+	background-image: url('./images/tribute-page.png');
 }
 
 .gallery-item:nth-child(2) {
@@ -55,7 +55,7 @@ body {
 }
 
 .gallery-item:nth-child(5) {
-	
+	background-image: url('./images/portfolio.png');
 }
 
 .gallery-item.gallery-item-selected {
