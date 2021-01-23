@@ -32,6 +32,9 @@ body {
   max-height: 40%;
   max-width: calc(40vh*2);
   z-index: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .gallery-item:nth-child(1) {
@@ -39,18 +42,15 @@ body {
 }
 
 .gallery-item:nth-child(2) {
-	background: orange;
+	background-image: url('./images/documentation-page.png');
 }
 
 .gallery-item:nth-child(3) {
 	background-image: url('./images/product-landing-page.png');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 .gallery-item:nth-child(4) {
-	background: red;
+	background-image: url('./images/survey-form.png');
 }
 
 .gallery-item:nth-child(5) {
