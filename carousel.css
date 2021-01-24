@@ -195,6 +195,13 @@ body {
     max-width: calc(320px*.7*2) !important;
   }
 
+  .gallery-item-selected:hover {
+    /* Need to keep important here because otherwise
+    it will scale using height */
+    max-height: calc(320px*.8) !important;
+    max-width: calc(320px*.8*2) !important;
+  }
+
   .gallery-item.gallery-item-previous,
   .gallery-item.gallery-item-next {
     max-height: calc(320px*.55);
