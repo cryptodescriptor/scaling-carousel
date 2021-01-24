@@ -1,10 +1,10 @@
 html, body {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-	margin: 0;
+  margin: 0;
 }
 
 .gallery {
@@ -39,23 +39,23 @@ body {
 }
 
 .gallery-item:nth-child(1) {
-	background-image: url('./images/tribute-page.png');
+ background-image: url('./images/tribute-page.png');
 }
 
 .gallery-item:nth-child(2) {
-	background-image: url('./images/documentation-page.png');
+ background-image: url('./images/documentation-page.png');
 }
 
 .gallery-item:nth-child(3) {
-	background-image: url('./images/product-landing-page.png');
+ background-image: url('./images/product-landing-page.png');
 }
 
 .gallery-item:nth-child(4) {
-	background-image: url('./images/survey-form.png');
+  background-image: url('./images/survey-form.png');
 }
 
 .gallery-item:nth-child(5) {
-	background-image: url('./images/portfolio.png');
+  background-image: url('./images/portfolio.png');
 }
 
 .gallery-item.gallery-item-selected {
@@ -67,6 +67,13 @@ body {
   max-height: 70vh;
   max-width: calc(70vh*2);
   z-index: 2;
+}
+
+.gallery-item.gallery-item-selected:hover {
+  height: calc(80vw/2);
+  width: 80vw;
+  max-height: 80vh;
+  max-width: calc(80vh*2);
 }
 
 .gallery-item.gallery-item-previous,
@@ -176,41 +183,48 @@ body {
 
 /* Prevent items from resizing after screen height < 320px */
 @media only screen and (max-height: 320px) {
-	.gallery-item {
-	  max-height: calc(320px*.4);
-	  max-width: calc(320px*.4*2);
-	}
+  .gallery-item {
+    max-height: calc(320px*.4);
+    max-width: calc(320px*.4*2);
+  }
 
-	.gallery-item-selected {
-	  /* Need to keep important here because otherwise
-	  it will scale using height */
-	  max-height: calc(320px*.7) !important;
-	  max-width: calc(320px*.7*2) !important;
-	}
+  .gallery-item-selected {
+    /* Need to keep important here because otherwise
+    it will scale using height */
+    max-height: calc(320px*.7) !important;
+    max-width: calc(320px*.7*2) !important;
+  }
 
-	.gallery-item.gallery-item-previous,
-	.gallery-item.gallery-item-next {
-	  max-height: calc(320px*.55);
-	  max-width: calc(320px*.55*2);
-	}
+  .gallery-item.gallery-item-previous,
+  .gallery-item.gallery-item-next {
+    max-height: calc(320px*.55);
+    max-width: calc(320px*.55*2);
+  }
 }
 
 /* Make item sizes slightly wider on smaller devices
 Vals need to be larger for larger scale. + 15vw currently */
 @media only screen and (max-width: 800px) {
-	.gallery-item {
-		height: calc(60vw/2);
-		width: 60vw;
-	}
+  .gallery-item {
+    height: calc(60vw/2);
+    width: 60vw;
+  }
 
-	.gallery-item.gallery-item-selected {
-		height: calc(90vw/2);
-		width: 90vw;
-	}
+  .gallery-item.gallery-item-selected {
+    height: calc(90vw/2);
+    width: 90vw;
+  }
 
-	.gallery-item.gallery-item-previous,
-	.gallery-item.gallery-item-next {
-		height: calc(75vw/2);
-		width: 75vw;
-	}
+  .gallery-item.gallery-item-selected:hover {
+    height: calc(100vw/2);
+    width: 100vw;
+    max-height: 100vw;
+    max-width: calc(100vw*2);
+  }
+
+  .gallery-item.gallery-item-previous,
+  .gallery-item.gallery-item-next {
+    height: calc(75vw/2);
+    width: 75vw;
+  }
 }
