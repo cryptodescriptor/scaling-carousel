@@ -35,6 +35,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: lightgrey;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .gallery-item:nth-child(1) {
