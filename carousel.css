@@ -69,13 +69,6 @@ body {
   z-index: 2;
 }
 
-.gallery-item.gallery-item-selected:hover {
-  height: calc(80vw/2);
-  width: 80vw;
-  max-height: 80vh;
-  max-width: calc(80vh*2);
-}
-
 .gallery-item.gallery-item-previous,
 .gallery-item.gallery-item-next {
   opacity: 1;
@@ -137,18 +130,11 @@ body {
     max-width: calc(320px*.4*2);
   }
 
-  .gallery-item-selected {
+  .gallery-item.gallery-item-selected {
     /* Need to keep important here because otherwise
     it will scale using height */
-    max-height: calc(320px*.7) !important;
-    max-width: calc(320px*.7*2) !important;
-  }
-
-  .gallery-item-selected:hover {
-    /* Need to keep important here because otherwise
-    it will scale using height */
-    max-height: calc(320px*.8) !important;
-    max-width: calc(320px*.8*2) !important;
+    max-height: calc(320px*.7);
+    max-width: calc(320px*.7*2);
   }
 
   .gallery-item.gallery-item-previous,
@@ -162,26 +148,19 @@ body {
 Vals need to be larger for larger scale. + 15vw currently */
 @media only screen and (max-width: 800px) {
   .gallery-item {
-    height: calc(60vw/2);
-    width: 60vw;
+    height: calc(65vw/2);
+    width: 65vw;
   }
 
   .gallery-item.gallery-item-selected {
-    height: calc(90vw/2);
-    width: 90vw;
-  }
-
-  .gallery-item.gallery-item-selected:hover {
-    height: calc(100vw/2);
-    width: 100vw;
-    max-height: 100vw;
-    max-width: calc(100vw*2);
+    height: calc(95vw/2);
+    width: 95vw;
   }
 
   .gallery-item.gallery-item-previous,
   .gallery-item.gallery-item-next {
-    height: calc(75vw/2);
-    width: 75vw;
+    height: calc(80vw/2);
+    width: 80vw;
   }
 }
 
@@ -200,7 +179,7 @@ Vals need to be larger for larger scale. + 15vw currently */
 	font-family: inherit;
 	cursor: pointer;
 	padding: 0;
-	outline: none;
+	outline:;
 }
 
 .previous:hover {
