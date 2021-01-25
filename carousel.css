@@ -177,10 +177,7 @@ Vals need to be larger for larger scale. + 15vw currently */
   font-family: inherit;
   cursor: pointer;
   padding: 0;
-  outline: 0;
-  /* Remove blue highlight in webkit browsers,
-  specifically targetting mobile chrome */
-  -webkit-tap-highlight-color: transparent;
+  outline: 0 !important;
 }
 
 .previous:hover {
