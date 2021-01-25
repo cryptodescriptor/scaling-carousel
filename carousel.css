@@ -28,7 +28,6 @@ body {
   position: absolute;
   height: calc(65vw/2);
   width: 65vw;
-  transition: all 0.2s ease-in-out;
   z-index: 0;
   background-position: center;
   background-size: cover;
@@ -139,6 +138,12 @@ body {
     max-width: calc(55vh*2);
     height: calc(55vw/2);
     width: 55vw;
+  }
+}
+
+@media only screen and (min-width: 800px) and (min-height: 320px) {
+  .gallery-item {
+    transition: all 0.2s ease-in-out;
   }
 }
 
