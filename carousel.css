@@ -131,8 +131,6 @@ body {
   }
 
   .gallery-item.gallery-item-selected {
-    /* Need to keep important here because otherwise
-    it will scale using height */
     max-height: calc(320px*.7);
     max-width: calc(320px*.7*2);
   }
