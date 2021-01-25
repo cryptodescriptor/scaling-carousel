@@ -141,13 +141,6 @@ body {
   }
 }
 
-/* Only do animation on larger screens (in hopes of it having better hardware) */
-@media only screen and (min-width: 800px) and (min-height: 320px) {
-  .gallery-item {
-    transition: all 0.2s ease-in-out;
-  }
-}
-
 /* Make item sizes slightly wider on smaller devices
 Vals need to be larger for larger scale. */
 @media only screen and (max-width: 800px) {
