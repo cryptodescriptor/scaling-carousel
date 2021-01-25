@@ -35,7 +35,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: lightgrey;
-  transition: all 0.2s ease-in-out;
 }
 
 .gallery-item:nth-child(1) {
