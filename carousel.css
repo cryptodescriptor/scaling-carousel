@@ -26,10 +26,8 @@ body {
 .gallery-item {
   opacity: .4;
   position: absolute;
-  height: calc(40vw/2);
-  width: 40vw;
-  max-height: 40vh;
-  max-width: calc(40vh*2);
+  height: calc(65vw/2);
+  width: 65vw;
   transition: all 0.2s ease-in-out;
   z-index: 0;
   background-position: center;
@@ -62,20 +60,16 @@ body {
   opacity: 1;
   left: 50%;
   transform: translateX(-50%);
-  height: calc(70vw/2);
-  width: 70vw;
-  max-height: 70vh;
-  max-width: calc(70vh*2);
+  height: calc(95vw/2);
+  width: 95vw;
   z-index: 2;
 }
 
 .gallery-item.gallery-item-previous,
 .gallery-item.gallery-item-next {
   opacity: 1;
-  height: calc(55vw/2);
-  width: 55vw;
-  max-height: 55vh;
-  max-width: calc(55vh*2);
+  height: calc(80vw/2);
+  width: 80vw;
   z-index: 1;
 }
 
@@ -123,44 +117,50 @@ body {
   background: #555;
 }
 
+/* Scale items down slightly on larger screens. */
+@media only screen and (min-width: 800px) {
+  .gallery-item {
+    height: calc(40vw/2);
+    width: 40vw;
+    max-height: 40vh;
+    max-width: calc(40vh*2);
+  }
+
+  .gallery-item.gallery-item-selected {
+    height: calc(70vw/2);
+    width: 70vw;
+    max-height: 70vh;
+    max-width: calc(70vh*2);
+  }
+
+  .gallery-item.gallery-item-previous,
+  .gallery-item.gallery-item-next {
+    max-height: 55vh;
+    max-width: calc(55vh*2);
+    height: calc(55vw/2);
+    width: 55vw;
+  }
+}
+
 /* Prevent items from resizing after screen height < 320px */
 @media only screen and (max-height: 320px) {
   .gallery-item {
-    max-height: calc(320px*.4);
-    max-width: calc(320px*.4*2);
+    max-height: calc(128px); /* 320px*.4 = 128px */
+    max-width: calc(256px);  /* 320px*.4*2 = 128px */
   }
 
   .gallery-item.gallery-item-selected {
-    max-height: calc(320px*.7);
-    max-width: calc(320px*.7*2);
+    max-height: calc(224px); /* 320px*.7 = 224px */
+    max-width: calc(448px);  /* 320px*.7*2 = 448px */
   }
 
   .gallery-item.gallery-item-previous,
   .gallery-item.gallery-item-next {
-    max-height: calc(320px*.55);
-    max-width: calc(320px*.55*2);
+    max-height: calc(176px); /* 320px*.55 = 176px */
+    max-width: calc(352px);  /* 320px*.55*2 = 352px */
   }
 }
 
-/* Make item sizes slightly wider on smaller devices
-Vals need to be larger for larger scale. */
-@media only screen and (max-width: 800px) {
-  .gallery-item {
-    height: calc(65vw/2);
-    width: 65vw;
-  }
-
-  .gallery-item.gallery-item-selected {
-    height: calc(95vw/2);
-    width: 95vw;
-  }
-
-  .gallery-item.gallery-item-previous,
-  .gallery-item.gallery-item-next {
-    height: calc(80vw/2);
-    width: 80vw;
-  }
-}
 
 .previous,
 .next {
