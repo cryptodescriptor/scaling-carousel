@@ -31,13 +31,6 @@ class Carousel {
     document.querySelector('.gallery-nav').childNodes[3].className = 'gallery-nav-item gallery-item-next';
     document.querySelector('.gallery-nav').childNodes[4].className = 'gallery-nav-item gallery-item-last';
 
-    if (!window.mobileAndTabletCheck()) {
-      var styleSheet = document.createElement('style');
-      styleSheet.type = 'text/css';
-      styleSheet.innerText = '.gallery-item { transition: all 0.2s ease-in-out; }';
-      document.head.appendChild(styleSheet);
-    }
-
     return document.querySelectorAll('.gallery-nav-item');
   }
 

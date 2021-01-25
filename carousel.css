@@ -26,15 +26,16 @@ body {
 .gallery-item {
   opacity: .4;
   position: absolute;
-  height: calc(40vw/2);
-  width: 40vw;
-  max-height: 40vh;
-  max-width: calc(40vh*2);
+  height: calc(65vw/2);
+  width: 65vw;
+  max-height: 128px; /* 320px*.4 = 128px */
+  max-width: 256px;  /* 320px*.4*2 = 128px */
   z-index: 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: lightgrey;
+  transition: all 0.2s ease-in-out;
 }
 
 .gallery-item:nth-child(1) {
@@ -61,20 +62,20 @@ body {
   opacity: 1;
   left: 50%;
   transform: translateX(-50%);
-  height: calc(70vw/2);
-  width: 70vw;
-  max-height: 70vh;
-  max-width: calc(70vh*2);
+  height: calc(95vw/2);
+  width: 95vw;
+  max-height: 224px; /* 320px*.7 = 224px */
+  max-width: 448px;  /* 320px*.7*2 = 448px */
   z-index: 2;
 }
 
 .gallery-item.gallery-item-previous,
 .gallery-item.gallery-item-next {
   opacity: 1;
-  height: calc(55vw/2);
-  width: 55vw;
-  max-height: 55vh;
-  max-width: calc(55vh*2);
+  height: calc(80vw/2);
+  width: 80vw;
+  max-height: 176px; /* 320px*.55 = 176px */
+  max-width: 352px;  /* 320px*.55*2 = 352px */
   z-index: 1;
 }
 
@@ -122,42 +123,41 @@ body {
   background: #555;
 }
 
-/* Prevent items from resizing after screen height < 320px */
-@media only screen and (max-height: 320px) {
+/* Allow items to resize again after 320px vh */
+@media only screen and (min-height: 320px) {
   .gallery-item {
-    max-height: calc(128px); /* 320px*.4 = 128px */
-    max-width: calc(256px);  /* 320px*.4*2 = 128px */
+    max-height: 40vh;
+    max-width: calc(40vh*2);
   }
 
   .gallery-item.gallery-item-selected {
-    max-height: calc(224px); /* 320px*.7 = 224px */
-    max-width: calc(448px);  /* 320px*.7*2 = 448px */
+    max-height: 70vh;
+    max-width: calc(70vh*2);
   }
 
   .gallery-item.gallery-item-previous,
   .gallery-item.gallery-item-next {
-    max-height: calc(176px); /* 320px*.55 = 176px */
-    max-width: calc(352px);  /* 320px*.55*2 = 352px */
+    max-height: 55vh;
+    max-width: calc(55vh*2);
   }
 }
 
-/* Make item sizes slightly wider on smaller devices
-Vals need to be larger for larger scale. */
-@media only screen and (max-width: 800px) {
+/* Make item sizes slightly thinner on larger devices */
+@media only screen and (min-width: 800px) {
   .gallery-item {
-    height: calc(65vw/2);
-    width: 65vw;
+    height: calc(40vw/2);
+    width: 40vw;
   }
 
   .gallery-item.gallery-item-selected {
-    height: calc(95vw/2);
-    width: 95vw;
+    height: calc(70vw/2);
+    width: 70vw;
   }
 
   .gallery-item.gallery-item-previous,
   .gallery-item.gallery-item-next {
-    height: calc(80vw/2);
-    width: 80vw;
+    height: calc(55vw/2);
+    width: 55vw;
   }
 }
 
