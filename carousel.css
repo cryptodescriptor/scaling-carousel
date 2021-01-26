@@ -64,10 +64,10 @@ body {
 
 .gallery-item-selected > .gallery-title {
   position: absolute;
-  top: 7.04px;
-  left: 9.6px;
+  font-size: 10.24px; /* 320px * 0.032 */
+  top: 7.04px; /* 320px * 0.022 */
+  left: 9.6px;  /* 320px * 0.03 */
   font-family:'Saira SemiCondensed';
-  font-size: 10.24px;
   color: #ffffff;
   background: rgba(0,0,0,0.7);
   border-radius: 5px;
