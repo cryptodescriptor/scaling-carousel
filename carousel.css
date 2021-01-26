@@ -58,11 +58,11 @@ body {
   background-image: url('./images/portfolio.png');
 }
 
-.gallery-title {
+.project-title {
   opacity: 0;
 }
 
-.gallery-item-selected > .gallery-title {
+.gallery-item-selected > .project-title {
   position: absolute;
   font-size: 10.24px; /* 320px * 0.032 */
   top: 7.04px; /* 320px * 0.022 */
@@ -77,7 +77,7 @@ body {
 }
 
 @media only screen and (min-height: 320px) {
-  .gallery-item-selected > .gallery-title {
+  .gallery-item-selected > .project-title {
     font-size: 3.2vmin;
     top: 2.2vmin;
     left: 3vmin;
