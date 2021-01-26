@@ -58,6 +58,32 @@ body {
   background-image: url('./images/portfolio.png');
 }
 
+.gallery-title {
+  opacity: 0;
+}
+
+.gallery-item-selected > .gallery-title {
+  position: absolute;
+  top: 7.04px;
+  left: 9.6px;
+  font-family:'Saira SemiCondensed';
+  font-size: 10.24px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.7);
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
+  line-height: 1.4;
+  opacity: 1;
+}
+
+@media only screen and (min-height: 320px) {
+  .gallery-item-selected > .gallery-title {
+    font-size: 3.2vmin;
+    top: 2.2vmin;
+    left: 3vmin;
+  }
+}
+
 .gallery-item.gallery-item-selected {
   opacity: 1;
   left: 50%;
