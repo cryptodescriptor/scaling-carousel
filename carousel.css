@@ -88,7 +88,7 @@ body {
 
 .gallery-item-selected > .github {
 	position: absolute;
-	right: 12%;
+	right: 9%;
 	top: 40%;
 	height: 7.5%;
 	display: flex;
