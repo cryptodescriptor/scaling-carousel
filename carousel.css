@@ -78,7 +78,7 @@ body {
 
 @media only screen and (min-height: 320px) {
   .gallery-item-selected > .project-title {
-    font-size: 3.2vmin;
+    font-size: 3.3vmin;
   }
 }
 
@@ -88,9 +88,9 @@ body {
 
 .gallery-item-selected > .github {
 	position: absolute;
-	right: 6%;
+	right: 9%;
 	top: 40%;
-	height: 8%;
+	height: 7.5%;
 	display: flex;
 	opacity: 1;
 }
