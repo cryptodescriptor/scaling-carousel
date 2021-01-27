@@ -82,12 +82,17 @@ body {
   }
 }
 
+.github {
+	opacity: 0;
+}
+
 .gallery-item-selected > .github {
 	position: absolute;
 	right: 6%;
 	top: 40%;
 	height: 8%;
 	display: flex;
+	opacity: 1;
 }
 
 .gallery-item-selected > .github > .github-logo {
