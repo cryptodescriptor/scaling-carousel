@@ -66,11 +66,10 @@ body {
 
 .gallery-item-selected > .project-title {
   position: absolute;
-  font-size: 10.24px; /* 320px * 0.032 */
+  font-size: 12.8px; /* 320px * 0.032 */
   top: 4%;
   left: 3%;
   background: rgba(0,0,0,0.9);
-  border-radius: 1.6px;  /* 320px * 0.005 */
   padding: 0 5px 0 5px;
   line-height: 1.4;
   opacity: 1;
@@ -88,46 +87,31 @@ body {
 	display: flex;
 	opacity: 1;
 	background: rgba(0,0,0,.9);
-	border-radius: 1.6px;  /* 320px * 0.005 */
-	padding: 1.28px;   /* 320px * 0.004 */
+	padding: 4px;
 	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-logo {
 	height: 100%;
 	width: auto;
-	padding: 0.96px;  /* 320px * 0.003 */
-	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-text {
-	font-size: 8.64px; /* 320px * 0.0265 */
+	font-size: 10.8px; /* 320px * 0.0265 */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 12.8px; /* 320px * 0.04 */
-	margin-right: 12.8px; /* 320px * 0.04 */
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
-@media only screen and (min-height: 320px) {
+@media only screen and (min-height: 400px) {
   .gallery-item-selected > .project-title {
     font-size: 3.2vmin;
-    border-radius: .5vmin;
-  }
-
-  .gallery-item-selected > .github {
-    border-radius: .5vmin;
-    padding: .4vmin;
-  }
-
-  .gallery-item-selected > .github > .github-logo {
-  	padding: .3vmin;
   }
 
   .gallery-item-selected > .github > .github-text {
 	font-size: 2.7vmin;
-	margin-left: 4vmin;
-	margin-right: 4vmin;
   }
 }
 
