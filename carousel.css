@@ -89,14 +89,14 @@ body {
 	opacity: 1;
 	background: rgba(0,0,0,.9);
 	border-radius: 1.6px;  /* 320px * 0.005 */
-	padding: 1.28px;   /* 320px * 0.004 */
+	padding: 3px;
 	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-logo {
 	height: 100%;
 	width: auto;
-	padding: 0.96px;  /* 320px * 0.003 */
+	padding: 0.64px;  /* 320px * 0.002 */
 	box-sizing: border-box;
 }
 
@@ -117,11 +117,10 @@ body {
 
   .gallery-item-selected > .github {
     border-radius: .5vmin;
-    padding: .4vmin;
   }
 
   .gallery-item-selected > .github > .github-logo {
-  	padding: .3vmin;
+  	padding: .2vmin;
   }
 
   .gallery-item-selected > .github > .github-text {
