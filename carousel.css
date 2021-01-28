@@ -84,7 +84,7 @@ body {
 .gallery-item-selected > .github-button-svg,
 .gallery-item-selected > .website-button-svg {
   position: absolute;
-  right: 7%;
+  right: 8%;
   height: 8%;
   width: auto;
   opacity: 1;
