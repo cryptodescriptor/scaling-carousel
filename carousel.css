@@ -76,6 +76,14 @@ body {
   opacity: 1;
 }
 
+.gallery-item-selected > .github-button-svg {
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  height: 8%;
+  width: auto;
+}
+
 @media only screen and (min-height: 400px) {
   .gallery-item-selected > .project-title {
     font-size: 3.2vmin;
