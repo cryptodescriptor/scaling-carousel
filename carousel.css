@@ -102,7 +102,7 @@ body {
 .gallery-item-selected > .github > .github-logo {
 	height: 100%;
 	width: auto;
-	padding: .5vmin;
+	padding: .3vmin;
 	box-sizing: border-box;
 }
 
