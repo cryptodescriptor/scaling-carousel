@@ -101,7 +101,7 @@ body {
 }
 
 .gallery-item-selected > .github > .github-text {
-	font-size: 8.48px; /* 320px * 0.0265 */
+	font-size: 8.64px; /* 320px * 0.0265 */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -125,7 +125,7 @@ body {
   }
 
   .gallery-item-selected > .github > .github-text {
-	font-size: 2.65vmin;
+	font-size: 2.7vmin;
 	margin-left: 4vmin;
 	margin-right: 4vmin;
   }
