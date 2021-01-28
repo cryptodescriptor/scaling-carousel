@@ -89,19 +89,19 @@ body {
 	opacity: 1;
 	background: rgba(0,0,0,.9);
 	border-radius: 1.6px;  /* 320px * 0.005 */
-	padding: 3px;
+	padding: 1.28px;   /* 320px * 0.004 */
 	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-logo {
 	height: 100%;
 	width: auto;
-	padding: 0.64px;  /* 320px * 0.002 */
+	padding: 0.96px;  /* 320px * 0.003 */
 	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-text {
-	font-size: 8.64px; /* 320px * 0.027 */
+	font-size: 8.48px; /* 320px * 0.0265 */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -117,14 +117,15 @@ body {
 
   .gallery-item-selected > .github {
     border-radius: .5vmin;
+    padding: .4vmin;
   }
 
   .gallery-item-selected > .github > .github-logo {
-  	padding: .2vmin;
+  	padding: .3vmin;
   }
 
   .gallery-item-selected > .github > .github-text {
-	font-size: 2.7vmin;
+	font-size: 2.65vmin;
 	margin-left: 4vmin;
 	margin-right: 4vmin;
   }
