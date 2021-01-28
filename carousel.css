@@ -70,7 +70,7 @@ body {
   top: 4%;
   left: 3%;
   background: rgba(0,0,0,0.9);
-  border-radius: 5px;
+  border-radius: .5vmin;
   padding: 0 5px 0 5px;
   line-height: 1.4;
   opacity: 1;
@@ -90,28 +90,27 @@ body {
 	position: absolute;
 	right: 9%;
 	top: 40%;
-	height: 7.8%;
+	height: 8%;
 	display: flex;
 	opacity: 1;
+	background: rgba(0,0,0,.9);
+	border-radius: .5vmin;
+	padding: .4vmin;
+	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-logo {
 	height: 100%;
 	width: auto;
-	background: rgba(0,0,0,.9);
-	border-radius: 50% 0 0 50%;
-	padding: .4vmin;
-	box-sizing: border-box;
 }
 
 .gallery-item-selected > .github > .github-text {
-	background: rgba(0,0,0,.9);
-	font-size: 2.8vmin;
-	padding: .4vmin 2vmin .4vmin 2vmin;
-	box-sizing: border-box;
+	font-size: 2.6vmin;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-left: 4vmin;
+	margin-right: 4vmin;
 }
 
 .gallery-item.gallery-item-selected {
