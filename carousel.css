@@ -76,12 +76,26 @@ body {
   opacity: 1;
 }
 
-.gallery-item-selected > .github-button-svg {
+.github-button-svg,
+.website-button-svg {
+  opacity: 0;
+}
+
+.gallery-item-selected > .github-button-svg,
+.gallery-item-selected > .website-button-svg {
   position: absolute;
-  top: 40%;
-  right: 3%;
+  right: 7%;
   height: 8%;
   width: auto;
+  opacity: 1;
+}
+
+.gallery-item-selected > .github-button-svg {
+  top: 38%;
+}
+
+.gallery-item-selected > .website-button-svg {
+  top: 48%;
 }
 
 @media only screen and (min-height: 400px) {
