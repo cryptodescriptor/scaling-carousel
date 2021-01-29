@@ -88,6 +88,7 @@ body {
   height: 8%;
   width: auto;
   opacity: 1;
+  cursor: pointer;
 }
 
 .gallery-item-selected > .github-button-svg {
