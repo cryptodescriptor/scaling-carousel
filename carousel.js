@@ -57,6 +57,8 @@ class Carousel {
 
     [this.carouselArray, galleryNavItems].forEach(elements => {
       elements.forEach((item, ind) => {
+        // if item.classList[1] === gallery-item-selected then remove btns at this ind
+        // if tempClassList[ind] === gallery-item-selected then add btns at this ind
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
       });
