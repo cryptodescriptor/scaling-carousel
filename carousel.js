@@ -12,7 +12,7 @@ const galleryContainer = document.querySelector('.gallery-container');
 const galleryItems = document.querySelectorAll('.gallery-item');
 const githubSVG = './images/github.svg';
 const websiteSVG = './images/website.svg';
-const urlPostfixes = ['tribute-page', 'documentation-page', 'product-landing-page', 'portfolio'];
+const urlPostfixes = ['tribute-page', 'documentation-page', 'product-landing-page', 'survey-form', 'portfolio'];
 
 class Carousel {
   constructor(items) {
