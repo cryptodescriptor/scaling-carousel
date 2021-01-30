@@ -86,7 +86,7 @@ class Carousel {
 
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
-        
+
         if (remove)
           this.removeBtnElements(item);
         else if (add)
