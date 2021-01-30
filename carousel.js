@@ -20,8 +20,24 @@ class Carousel {
     this.carouselArrayTemp = [];
   }
 
-  // Assign initial css classes for gallery and nav items
+  addBtnEvents(parent, ind) {
+    parent.querySelector('.github-btn-svg').addEventListener('click', e => {
+      window.open('https://github.com/cryptodescriptor/' + urlPostfixes[ind], '_blank');
+    });
+
+    parent.querySelector('.website-btn-svg').addEventListener('click', e => {
+      window.open('https://cryptodescriptor.github.io/' + urlPostfixes[ind], '_blank');
+    });
+  }
+
+  addBtnElements(parent) {
+    parent.innerHTML += 
+    '<img src="' + githubSVG + '" alt="Github Button" class="github-btn-svg btn-svg">' +
+    '<img src="' + websiteSVG + '" alt="Website Button" class="website-btn-svg btn-svg">';
+  }
+
   setInitialState() {
+    // Assign initial css classes for gallery and nav items
     this.carouselArray[0].classList.add('gallery-item-first');
     this.carouselArray[1].classList.add('gallery-item-previous');
     this.carouselArray[2].classList.add('gallery-item-selected');
@@ -34,6 +50,13 @@ class Carousel {
     document.querySelector('.gallery-nav').childNodes[3].className = 'gallery-nav-item gallery-item-next';
     document.querySelector('.gallery-nav').childNodes[4].className = 'gallery-nav-item gallery-item-last';
 
+    // Add buttons and corresponding event listeners
+    this.carouselArray.forEach((item, ind) => {
+      this.addBtnElements(item);
+      this.addBtnEvents(item, ind);
+    });
+
+    // Only use animation on devices other than Mobile and Tablets
     if (!window.mobileAndTabletCheck()) {
       var styleSheet = document.createElement('style');
       styleSheet.type = 'text/css';
@@ -42,25 +65,6 @@ class Carousel {
     }
 
     return document.querySelectorAll('.gallery-nav-item');
-  }
-
-  removeBtnElements(parent) {
-    parent.querySelectorAll('.btn-svg').forEach(el => { el.remove(); });
-  }
-
-  addBtnElements(parent) {
-    parent.innerHTML += 
-    '<img src="'+githubSVG+'" alt="Github Button" class="github-btn-svg btn-svg">' +
-    '<img src="'+websiteSVG+'" alt="Website Button" class="website-btn-svg btn-svg">';
-  }
-
-  btnCheck(currentItemClass, nextItemClass) {
-    let remove = false, add = false;
-    if (currentItemClass === 'gallery-item-selected')
-      remove = true;
-    else if (nextItemClass === 'gallery-item-selected')
-      add = true;
-    return remove, add;
   }
 
   // Update the order state of the carousel with css classes
@@ -77,13 +81,8 @@ class Carousel {
       tempClassList.push(item.classList[1]);
     });
 
-    let remove, add;
-
-    [this.carouselArray, galleryNavItems].forEach((elements, elInd) => {
+    [this.carouselArray, galleryNavItems].forEach(elements => {
       elements.forEach((item, ind) => {
-        if (elInd === 0)
-          remove, add = this.btnCheck(item.classList[1], tempClassList[ind]);
-
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
       });
