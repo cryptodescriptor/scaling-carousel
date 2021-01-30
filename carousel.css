@@ -76,13 +76,13 @@ body {
   opacity: 1;
 }
 
-.github-button-svg,
-.website-button-svg {
+.github-btn-svg,
+.website-btn-svg {
   opacity: 0;
 }
 
-.gallery-item-selected > .github-button-svg,
-.gallery-item-selected > .website-button-svg {
+.gallery-item-selected > .github-btn-svg,
+.gallery-item-selected > .website-btn-svg {
   position: absolute;
   right: 8%;
   height: 8%;
@@ -91,11 +91,11 @@ body {
   cursor: pointer;
 }
 
-.gallery-item-selected > .github-button-svg {
+.gallery-item-selected > .github-btn-svg {
   top: 38%;
 }
 
-.gallery-item-selected > .website-button-svg {
+.gallery-item-selected > .website-btn-svg {
   top: 48%;
 }
 

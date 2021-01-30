@@ -10,6 +10,9 @@ window.mobileAndTabletCheck = function() {
 
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryItems = document.querySelectorAll('.gallery-item');
+const githubSVG = './images/github.svg';
+const websiteSVG = './images/website.svg';
+const urlPostfixes = ['tribute-page', 'documentation-page', 'product-landing-page', 'portfolio'];
 
 class Carousel {
   constructor(items) {
@@ -41,6 +44,23 @@ class Carousel {
     return document.querySelectorAll('.gallery-nav-item');
   }
 
+  removeBtnElements(parent) {
+    parent.querySelectorAll('.btn-svg').forEach(el => { el.remove(); });
+  }
+
+  addBtnElements(parent) {
+    parent.innerHTML += 
+    '<img src="'+githubSVG+'" alt="Github Button" class="github-btn-svg btn-svg">' +
+    '<img src="'+websiteSVG+'" alt="Website Button" class="website-btn-svg btn-svg">';
+  }
+
+  btnCheck(currentItem, nextItemClass) {
+    if (currentItem.classList[1] === 'gallery-item-selected')
+      this.removeBtnElements(currentItem);
+    else if (nextItemClass === 'gallery-item-selected')
+      this.addBtnElements(currentItem);
+  }
+
   // Update the order state of the carousel with css classes
   setCurrentState(target) {
     if (target.className === 'next') {
@@ -55,10 +75,9 @@ class Carousel {
       tempClassList.push(item.classList[1]);
     });
 
-    [this.carouselArray, galleryNavItems].forEach(elements => {
+    [this.carouselArray, galleryNavItems].forEach((elements, elInd) => {
       elements.forEach((item, ind) => {
-        // if item.classList[1] === gallery-item-selected then remove btns at this ind
-        // if tempClassList[ind] === gallery-item-selected then add btns at this ind
+        if (elInd === 0) this.btnCheck(item, tempClassList[ind]);
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
       });
