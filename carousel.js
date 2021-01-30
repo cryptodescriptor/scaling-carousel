@@ -54,11 +54,13 @@ class Carousel {
     '<img src="'+websiteSVG+'" alt="Website Button" class="website-btn-svg btn-svg">';
   }
 
-  btnCheck(currentItem, nextItemClass) {
-    if (currentItem.classList[1] === 'gallery-item-selected')
-      this.removeBtnElements(currentItem);
+  btnCheck(currentItemClass, nextItemClass) {
+    let remove = false, add = false;
+    if (currentItemClass === 'gallery-item-selected')
+      remove = true;
     else if (nextItemClass === 'gallery-item-selected')
-      this.addBtnElements(currentItem);
+      add = true;
+    return remove, add;
   }
 
   // Update the order state of the carousel with css classes
@@ -75,11 +77,19 @@ class Carousel {
       tempClassList.push(item.classList[1]);
     });
 
+    let remove, add;
+
     [this.carouselArray, galleryNavItems].forEach((elements, elInd) => {
       elements.forEach((item, ind) => {
-        if (elInd === 0) this.btnCheck(item, tempClassList[ind]);
+        if (elInd === 0) {
+          remove, add = this.btnCheck(item.classList[1], tempClassList[ind]);
+        }
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
+        if (remove)
+          this.removeBtnElements(item);
+        else if (add)
+          this.addBtnElements(item);
       });
     });
   }
