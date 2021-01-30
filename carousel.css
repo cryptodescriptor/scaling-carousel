@@ -85,7 +85,7 @@ body {
 .gallery-item-selected > .website-btn-svg {
   position: absolute;
   right: 8%;
-  height: 8%;
+  height: 7.5%;
   width: auto;
   opacity: 1;
   cursor: pointer;
