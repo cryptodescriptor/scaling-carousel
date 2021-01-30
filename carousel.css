@@ -101,7 +101,7 @@ body {
 
 @media only screen and (min-height: 400px) {
   .gallery-item-selected > .project-title {
-    font-size: 3.2vmin;
+    font-size: 3.1vmin;
   }
 }
 
