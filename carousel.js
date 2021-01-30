@@ -81,9 +81,9 @@ class Carousel {
 
     [this.carouselArray, galleryNavItems].forEach((elements, elInd) => {
       elements.forEach((item, ind) => {
-        if (elInd === 0) {
+        if (elInd === 0)
           remove, add = this.btnCheck(item.classList[1], tempClassList[ind]);
-        }
+        
         item.classList.remove(item.classList[1]);
         item.classList.add(tempClassList[ind]);
         if (remove)
