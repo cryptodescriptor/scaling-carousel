@@ -20,13 +20,19 @@ class Carousel {
     this.carouselArrayTemp = [];
   }
 
+  btnEvent(source, target, ind) {
+    if (target.parentElement.classList[1] !== 'gallery-item-selected') return;
+    let url = (source) ? 'https://github.com/cryptodescriptor/' : 'https://cryptodescriptor.github.io/';
+    window.open(url + urlPostfixes[ind], '_blank');
+  }
+
   addBtnEvents(parent, ind) {
     parent.querySelector('.github-btn-svg').addEventListener('click', e => {
-      window.open('https://github.com/cryptodescriptor/' + urlPostfixes[ind], '_blank');
+      this.btnEvent(true, e.target, ind);
     });
 
     parent.querySelector('.website-btn-svg').addEventListener('click', e => {
-      window.open('https://cryptodescriptor.github.io/' + urlPostfixes[ind], '_blank');
+      this.btnEvent(false, e.target, ind);
     });
   }
 
