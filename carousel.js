@@ -56,16 +56,12 @@ class Carousel {
     document.querySelector('.gallery-nav').childNodes[3].className = 'gallery-nav-item gallery-item-next';
     document.querySelector('.gallery-nav').childNodes[4].className = 'gallery-nav-item gallery-item-last';
 
-    // Add buttons
+    // Add buttons and corresponding event listeners
     this.carouselArray.forEach((item) => {
       this.addBtnElements(item);
-    });
-
-    // Add corresponding event listeners
-    this.carouselArray.forEach((item, ind) => {
       this.addBtnEvents(item, ind);
     });
-
+    
     // Only use animation on devices other than Mobile and Tablets
     if (!window.mobileAndTabletCheck()) {
       var styleSheet = document.createElement('style');
